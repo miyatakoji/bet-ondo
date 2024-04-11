@@ -1,15 +1,20 @@
 [package]
 name = "bet-ondo"
 version = "1.0.0"
-authors = []
+upgrade_policy = "compatible"
 
 [addresses]
+bet-ondo = "0xe96d1d9d06b515d1ba63ac7fc8eac741f591aa8df98b83fd6f0ddc230e5e9fa4"
 
 [dev-addresses]
+bet-ondo = "0xe96d1d9d06b515d1ba63ac7fc8eac741f591aa8df98b83fd6f0ddc230e5e9fa4"
 
 [dependencies.AptosFramework]
 git = "https://github.com/aptos-labs/aptos-core.git"
-rev = "mainnet"
+rev = "main"
 subdir = "aptos-move/framework/aptos-framework"
 
-[dev-dependencies]
+[dependencies.AptosTokenObjects]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "main"
+subdir = "aptos-move/framework/aptos-token-objects"
