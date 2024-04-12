@@ -71,7 +71,7 @@ export default function Home() {
                 <div className="descSectionboxitem">
                 <h3>Earn Rewards</h3>
                 <p>・Win prizes by making the closest temperature predictions.</p>
-                <p>・Stake your tokens to earn a return from the game's fees.</p>
+                <p>・Stake your tokens to earn a return from the games fees.</p>
                 </div>
                 <div className="descSectionboxitem">
                 <h3>Track Your Progress</h3>

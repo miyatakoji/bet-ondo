@@ -74,7 +74,7 @@ const Predict = () => {
           <Link className="navlink"  href="/profile">My Profile</Link>
         </nav>
       </header>
-      <div className='wrap'>
+      <div className="wrap">
         <h2>Tokto Temperature Prediction</h2>
         <h2>Current Status</h2>
         <div className="stats">
