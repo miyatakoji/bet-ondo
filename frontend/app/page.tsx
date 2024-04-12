@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { fetchWeather } from '../lib/fetchWeather';
 import { WeatherData } from '../lib/weatherTypes';
 import Head from 'next/head';
-
 import Link from 'next/link';
 
 interface TemperaturesProps {
@@ -28,7 +27,6 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        
           <title>BetOnDo Home</title>
       </Head>
 
@@ -93,27 +91,27 @@ export default function Home() {
 
         
           <div className="cityLinks">
-            <Link href="/prediction" className="cityLink">
+            <Link href="/prediction/Tokyo" className="cityLink">
                 <span>Tokyo</span>
                 <img src="/tokyo.png" alt="Results" className="city} "/>
             </Link>
-            <Link href="/prediction" className="cityLink">
+            <Link href="/prediction/London" className="cityLink">
                 <span>London</span>
                 <img src="/london.png" alt="My Profile" className="city} "/>
             </Link>          
-            <Link href="/prediction" className="cityLink">
+            <Link href="/prediction/Kairo" className="cityLink">
               <span>Kairo</span>
               <img src="/kairo.png" alt="My Profile" className="city} "/>
             </Link>
-            <Link href="/prediction" className="cityLink">
+            <Link href="/prediction/Sidney" className="cityLink">
               <span>Sidney</span>
               <img src="/sidney.png" alt="My Profile" className="city} "/>
             </Link>
-            <Link href="/prediction" className="cityLink">
+            <Link href="/prediction/NewYork" className="cityLink">
               <span>NewYork</span>
               <img src="/ny.png" alt="My Profile" className="city} "/>
             </Link>
-            <Link href="/prediction" className="cityLink">
+            <Link href="/prediction/Rome" className="cityLink">
               <span>Rome</span>
               <img src="/rome.png" alt="My Profile" className="city} "/>
             </Link>

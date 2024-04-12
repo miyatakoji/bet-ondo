@@ -1,7 +1,5 @@
 // @use client
 import { useEffect, useState } from 'react';
-import { fetchWeather } from '../lib/fetchWeather';
-import { WeatherData } from '../lib/weatherTypes';
 import Head from 'next/head';
 
 import Link from 'next/link';

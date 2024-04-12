@@ -1,119 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-/* Home.module.css */
-
 .container {
-  max-width: 100% !important; 
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  color: #fff;
-}
-
-.header {
-  padding: 40px 20px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-.header p {
-  margin: 10px 0 0;
-  font-size: 1.2rem;
-}
-
-.main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.section {
-  border: 1px solid #fff;
-  border-radius: 15px;
-  padding: 20px;
-  width: 80%;
-  max-width: 500px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.section:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-.section h2 {
-  margin: 0;
-  font-size: 1.8rem;
-}
-
-.section button {
-  background-color: #a777e3;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
+  background-color: #f5f5f5;
   border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.section button:hover {
-  background-color: #9256d0;
-}
-
-.footer {
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-align: center;
-  padding: 10px;
-  font-size: 0.9rem;
 }
 
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
+.form input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.form button {
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+
+.confirmation {
+  color: green;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 16px;
 }
