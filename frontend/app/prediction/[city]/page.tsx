@@ -1,5 +1,4 @@
 "use client"
-// import { useNavigation } from 'next/navigation';
 import React, { useState } from 'react';
 import "./index.css";
 import Head from 'next/head';
@@ -7,7 +6,6 @@ import Link from 'next/link';
 
 interface CityData {
   betCount: number;
-  closestAmount: number;
   temperatures: number[];
 }
 
@@ -15,51 +13,60 @@ interface PredictionData {
   [key: string]: CityData;
 }
 
-
 const predictionData : PredictionData = {
   "Tokyo": {
     betCount: 34,
-    closestAmount: 20.5,
-    temperatures: Array.from({length: 40}, (_, i) => 15 + Math.round(Math.sin(i) * 10))
+    temperatures: Array.from({length: 40}, (_, i) =>  Math.random() +15 + Math.round(Math.sin(i) * 4))
   },
   "London": {
     betCount: 29,
-    closestAmount: 20.5,
-    temperatures: Array.from({length: 40}, (_, i) => 10 + Math.round(Math.sin(i) * 5))
+    temperatures: Array.from({length: 40}, (_, i) => 10 + Math.round(Math.sin(i) * 5.3))
   },
   "New York": {
     betCount: 45,
-    closestAmount: 20.5,
-    temperatures: Array.from({length: 40}, (_, i) => 11 + Math.round(Math.cos(i) * 8))
+    temperatures: Array.from({length: 40}, (_, i) => 11 + Math.round(Math.cos(i) * 8.5))
   },
   "Rome": {
     betCount: 25,
-    closestAmount: 20.5,
-    temperatures: Array.from({length: 40}, (_, i) => 20 + Math.round(Math.sin(i) * 7))
+    temperatures: Array.from({length: 40}, (_, i) => 20 + Math.round(Math.sin(i) * 7.5))
   },
-  "Cairo": {
+  "Kairo": {
     betCount: 30,
-    closestAmount: 20.5,
-    temperatures: Array.from({length: 40}, (_, i) => 23 + Math.round(Math.cos(i) * 6))
+    temperatures: Array.from({length: 40}, (_, i) => 23 + Math.round(Math.cos(i) * 6.7))
   },
   "Sydney": {
     betCount: 38,
-    closestAmount: 20.5,
-    temperatures: Array.from({length: 40}, (_, i) => 18 + Math.round(Math.sin(i) * 8))
+    temperatures: Array.from({length: 40}, (_, i) => 18 + Math.round(Math.sin(i) * 8.2))
   }
 };
 
-const Predict = () => {
-  // const navigation = useNavigation();
-  // const city = navigation.query.city as string;
-  const city = predictionData["Tokyo"];
+const Predict = ({ params }: { params: { city: string } }) => {
+  const cityName = params.city
+  const city = predictionData[cityName];
+
+  const dates:string[] = [];
+  const today = new Date();
+
+
+  for (let i = 0; i <= 40; i++) {
+    const pastDate = new Date(today);
+    pastDate.setDate(today.getDate() - i);
+    dates.push(pastDate.toLocaleDateString()); // 日付をローカル形式で整形
+  }
   
+  let destDate:Date = new Date(today);
+  destDate.setDate(today.getDate() + 30)
+  const datestr = destDate.toLocaleDateString();
+  const imagename = "/"+cityName+".png";
 
   const [temperature, setTemperature] = useState('');
 
   // if (!city) return <p>Loading...</p>;
 
   return (
+    <div  className=" citypage">
+      
+    
     <div className="container">
       <Head>
           <title>BetOnDo Home</title>
@@ -74,17 +81,24 @@ const Predict = () => {
           <Link className="navlink"  href="/profile">My Profile</Link>
         </nav>
       </header>
+      <img src={imagename} alt="Results" className="cityimagepage"/>
       <div className="wrap">
-        <h2>Tokto Temperature Prediction</h2>
-        <h2>Current Status</h2>
+        <div className="main-colum">
+        <h2>{cityName} Temperature Prediction</h2>
         <div className="stats">
-          <p>If your prediction is the closest to the actual temperature, this amount will be yours</p>
-          <p>Current Bet Count: {city.betCount}</p>
-          <p>Current Prize: ${city.betCount * 10}</p>
+          <p>Please prediction {datestr} s Temperature</p>
+          <p>If your prediction is the closest to the actual temperature, this prize will be yours</p>
+          <p>Current Prize: ${city.betCount * 10} (Bet Count:{city.betCount})</p>
         </div>
+        </div>
+        
         <div className="form">
+          
+          <div>
           <input type="number" placeholder="Enter your prediction" />
           <button>Submit</button>
+          </div>
+          
         </div>
         <div className="history">
           <h2>Past Month Temperatures</h2>
@@ -98,15 +112,15 @@ const Predict = () => {
             <tbody>
               {city.temperatures.map((item, index) => (
                 <tr key={index}>
-                  <td>{index}</td>
-                  <td>{item}</td>
+                  <td>{dates[index]}</td>
+                  <td>{item.toFixed(1)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       </div>
-    </div>
+    </div></div>
   );
 };
 
