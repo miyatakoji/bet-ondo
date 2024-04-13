@@ -43,6 +43,13 @@ const predictionData : PredictionData = {
 const Predict = ({ params }: { params: { city: string } }) => {
   const cityName = params.city
   const city = predictionData[cityName];
+  const [amount, setAmount] = useState('');
+  const [submited, setSubmit] = useState(false);
+
+
+  const handleSubmit = () => {
+    setSubmit(true);
+  };
 
   const dates:string[] = [];
   const today = new Date();
@@ -93,11 +100,22 @@ const Predict = ({ params }: { params: { city: string } }) => {
         </div>
         
         <div className="form">
-          
           <div>
-          <input type="number" placeholder="Enter your prediction" />
-          <button>Submit</button>
+          <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter your prediction"
+        />
+        <button onClick={handleSubmit}>Submit</button>
+
+          
           </div>
+          {submited && (
+        <p className="confirmation">
+          You have successfully submit as {amount} .
+        </p>
+      )}
           
         </div>
         <div className="history">
