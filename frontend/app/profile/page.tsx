@@ -10,16 +10,14 @@ interface TemperaturesProps {
 
 interface UserProfile {
   username: string;
-  email: string;
-  joinedDate: string;
+  lastBet: string;
 }
 
 export default function Home() {
   
   const [userProfile, setUserProfile] = useState<UserProfile>({
-    username: "JohnDoe",
-    email: "john@example.com",
-    joinedDate: "January 1, 2022"
+    username: "usename",
+    lastBet: "January 1, 2022"
   });
 
   return (
@@ -41,8 +39,7 @@ export default function Home() {
       <h2>User Profile</h2>
       <div className="profileDetails">
         <p><strong>Username:</strong> {userProfile.username}</p>
-        <p><strong>Email:</strong> {userProfile.email}</p>
-        <p><strong>Joined:</strong> {userProfile.joinedDate}</p>
+        <p><strong>Joined:</strong> {userProfile.lastBet}</p>
       </div>
     </div>
   );

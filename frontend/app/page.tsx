@@ -93,27 +93,27 @@ export default function Home() {
           <div className="cityLinks">
             <Link href="/prediction/Tokyo" className="cityLink">
                 <span>Tokyo</span>
-                <img src="/tokyo.png" alt="Results" className="city} "/>
+                <img src="/Tokyo.png" alt="Results" className="city} "/>
             </Link>
             <Link href="/prediction/London" className="cityLink">
                 <span>London</span>
-                <img src="/london.png" alt="My Profile" className="city} "/>
+                <img src="/London.png" alt="My Profile" className="city} "/>
             </Link>          
             <Link href="/prediction/Kairo" className="cityLink">
               <span>Kairo</span>
-              <img src="/kairo.png" alt="My Profile" className="city} "/>
+              <img src="/Kairo.png" alt="My Profile" className="city} "/>
             </Link>
             <Link href="/prediction/Sidney" className="cityLink">
               <span>Sidney</span>
-              <img src="/sidney.png" alt="My Profile" className="city} "/>
+              <img src="/Sidney.png" alt="My Profile" className="city} "/>
             </Link>
             <Link href="/prediction/NewYork" className="cityLink">
               <span>NewYork</span>
-              <img src="/ny.png" alt="My Profile" className="city} "/>
+              <img src="/NewYork.png" alt="My Profile" className="city} "/>
             </Link>
             <Link href="/prediction/Rome" className="cityLink">
               <span>Rome</span>
-              <img src="/rome.png" alt="My Profile" className="city} "/>
+              <img src="/Rome.png" alt="My Profile" className="city} "/>
             </Link>
           </div>
           <div className="stakingsection">
