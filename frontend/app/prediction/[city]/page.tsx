@@ -22,7 +22,7 @@ const predictionData : PredictionData = {
     betCount: 29,
     temperatures: Array.from({length: 40}, (_, i) => 10 + Math.round(Math.sin(i) * 5.3))
   },
-  "New York": {
+  "NewYork": {
     betCount: 45,
     temperatures: Array.from({length: 40}, (_, i) => 11 + Math.round(Math.cos(i) * 8.5))
   },
@@ -34,7 +34,7 @@ const predictionData : PredictionData = {
     betCount: 30,
     temperatures: Array.from({length: 40}, (_, i) => 23 + Math.round(Math.cos(i) * 6.7))
   },
-  "Sydney": {
+  "Sidney": {
     betCount: 38,
     temperatures: Array.from({length: 40}, (_, i) => 18 + Math.round(Math.sin(i) * 8.2))
   }
@@ -43,6 +43,13 @@ const predictionData : PredictionData = {
 const Predict = ({ params }: { params: { city: string } }) => {
   const cityName = params.city
   const city = predictionData[cityName];
+  const [amount, setAmount] = useState('');
+  const [submited, setSubmit] = useState(false);
+
+
+  const handleSubmit = () => {
+    setSubmit(true);
+  };
 
   const dates:string[] = [];
   const today = new Date();
@@ -93,11 +100,22 @@ const Predict = ({ params }: { params: { city: string } }) => {
         </div>
         
         <div className="form">
-          
           <div>
-          <input type="number" placeholder="Enter your prediction" />
-          <button>Submit</button>
+          <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter your prediction"
+        />
+        <button onClick={handleSubmit}>Submit</button>
+
+          
           </div>
+          {submited && (
+        <p className="confirmation">
+          You have successfully submit as {amount} .
+        </p>
+      )}
           
         </div>
         <div className="history">
