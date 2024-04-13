@@ -93,27 +93,27 @@ export default function Home() {
           <div className="cityLinks">
             <Link href="/prediction/Tokyo" className="cityLink">
                 <span>Tokyo</span>
-                <img src="/Tokyo.png" alt="Results" className="city} "/>
+                <img src="/Tokyo-img.png" alt="Results" className="city} "/>
             </Link>
             <Link href="/prediction/London" className="cityLink">
                 <span>London</span>
-                <img src="/London.png" alt="My Profile" className="city} "/>
+                <img src="/London-img.png" alt="My Profile" className="city} "/>
             </Link>          
             <Link href="/prediction/Kairo" className="cityLink">
               <span>Kairo</span>
-              <img src="/Kairo.png" alt="My Profile" className="city} "/>
+              <img src="/Kairo-img.png" alt="My Profile" className="city} "/>
             </Link>
             <Link href="/prediction/Sidney" className="cityLink">
               <span>Sidney</span>
-              <img src="/Sidney.png" alt="My Profile" className="city} "/>
+              <img src="/Sidney-img.png" alt="My Profile" className="city} "/>
             </Link>
             <Link href="/prediction/NewYork" className="cityLink">
               <span>NewYork</span>
-              <img src="/NewYork.png" alt="My Profile" className="city} "/>
+              <img src="/NewYork-img.png" alt="My Profile" className="city} "/>
             </Link>
             <Link href="/prediction/Rome" className="cityLink">
               <span>Rome</span>
-              <img src="/Rome.png" alt="My Profile" className="city} "/>
+              <img src="/Rome-img.png" alt="My Profile" className="city} "/>
             </Link>
           </div>
           <div className="stakingsection">
