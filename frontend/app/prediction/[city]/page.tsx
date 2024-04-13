@@ -64,7 +64,7 @@ const Predict = ({ params }: { params: { city: string } }) => {
   let destDate:Date = new Date(today);
   destDate.setDate(today.getDate() + 30)
   const datestr = destDate.toLocaleDateString();
-  const imagename = "/"+cityName+".png";
+  const imagename = "/"+cityName+"-img.png";
 
   const [temperature, setTemperature] = useState('');
 
