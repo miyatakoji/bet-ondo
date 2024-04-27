@@ -7,6 +7,7 @@ import Link from 'next/link';
 interface CityData {
   betCount: number;
   temperatures: number[];
+  yourPredictions: number[];
 }
 
 interface PredictionData {
@@ -16,27 +17,33 @@ interface PredictionData {
 const predictionData : PredictionData = {
   "Tokyo": {
     betCount: 34,
-    temperatures: Array.from({length: 40}, (_, i) =>  Math.random() +15 + Math.round(Math.sin(i) * 4))
+    temperatures: Array.from({length: 40}, (_, i) =>  Math.random() +15 + Math.round(Math.sin(i) * 4)),
+    yourPredictions: Array.from({length: 40}, (_, i) =>  Math.random() +15 + Math.round(Math.sin(i) * 4))
   },
   "London": {
     betCount: 29,
-    temperatures: Array.from({length: 40}, (_, i) => 10 + Math.round(Math.sin(i) * 5.3))
+    temperatures: Array.from({length: 40}, (_, i) => Math.random() + 10 + Math.round(Math.sin(i) * 5.3)),
+    yourPredictions: Array.from({length: 40}, (_, i) =>  Math.random() +15 + Math.round(Math.sin(i) * 4))
   },
   "NewYork": {
     betCount: 45,
-    temperatures: Array.from({length: 40}, (_, i) => 11 + Math.round(Math.cos(i) * 8.5))
+    temperatures: Array.from({length: 40}, (_, i) => Math.random() + 11 + Math.round(Math.cos(i) * 8.5)),
+    yourPredictions: Array.from({length: 40}, (_, i) =>  Math.random() +15 + Math.round(Math.sin(i) * 4))
   },
   "Rome": {
     betCount: 25,
-    temperatures: Array.from({length: 40}, (_, i) => 20 + Math.round(Math.sin(i) * 7.5))
+    temperatures: Array.from({length: 40}, (_, i) => Math.random() + 20 + Math.round(Math.sin(i) * 7.5)),
+    yourPredictions: Array.from({length: 40}, (_, i) =>  Math.random() +15 + Math.round(Math.sin(i) * 4))
   },
   "Kairo": {
     betCount: 30,
-    temperatures: Array.from({length: 40}, (_, i) => 23 + Math.round(Math.cos(i) * 6.7))
+    temperatures: Array.from({length: 40}, (_, i) => Math.random() + 23 + Math.round(Math.cos(i) * 6.7)),
+    yourPredictions: Array.from({length: 40}, (_, i) =>  Math.random() +15 + Math.round(Math.sin(i) * 4))
   },
   "Sidney": {
     betCount: 38,
-    temperatures: Array.from({length: 40}, (_, i) => 18 + Math.round(Math.sin(i) * 8.2))
+    temperatures: Array.from({length: 40}, (_, i) => Math.random() + 18 + Math.round(Math.sin(i) * 8.2)),
+    yourPredictions: Array.from({length: 40}, (_, i) =>  Math.random() +15 + Math.round(Math.sin(i) * 4))
   }
 };
 
@@ -108,8 +115,6 @@ const Predict = ({ params }: { params: { city: string } }) => {
           placeholder="Enter your prediction"
         />
         <button onClick={handleSubmit}>Submit</button>
-
-          
           </div>
           {submited && (
         <p className="confirmation">
@@ -124,7 +129,8 @@ const Predict = ({ params }: { params: { city: string } }) => {
             <thead>
               <tr>
                 <th>Date</th>
-                <th>Temperature (°C)</th>
+                <th>Oracles Temperature (°C)</th>
+                <th>Your Predction (°C)</th>
               </tr>
             </thead>
             <tbody>
@@ -132,6 +138,7 @@ const Predict = ({ params }: { params: { city: string } }) => {
                 <tr key={index}>
                   <td>{dates[index]}</td>
                   <td>{item.toFixed(1)}</td>
+                  <td>{city.yourPredictions[index].toFixed(1)}</td>
                 </tr>
               ))}
             </tbody>
