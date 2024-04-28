@@ -1,6 +1,7 @@
 BetOndo は、プレイヤーが将来の気温を予測し、その正確さを競うゲームプラットフォームです。プレイヤーは楽しみながら環境問題について学び、気候変動への理解を深めることができます。
-Aptos のチェーン上で動作するプロトコルです。
+AptosとMinaのチェーン上で動作するプロトコルです。
 予測された温度はzkproofによって、公開されることなく検証されます。
+zkproofはo1.jsを使って実装されます。
 
 ## Overview:
 
@@ -23,7 +24,7 @@ Game Players
 
 StakersPeople
 
-- who have surplus tokens on Aptos.
+- who have surplus tokens on Aptos or Mina
 - Stake in the BetOnDo Protocol.
 
 Management bot
