@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "jest": "^29.7.0",
-    "snarkyjs": "^0.12.1"
-  }
-}
