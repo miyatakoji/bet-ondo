@@ -1,0 +1,5 @@
+[dependencies]
+ink_lang = "3.0.0-rc6"
+ink_storage = "3.0.0-rc6"
+scale = "2.0.0"
+scale-info = "0.6.0"
